@@ -14,6 +14,7 @@ set listchars=tab:▸\ ,eol:↲,extends:❯,precedes:❮ " 不可視文字の表
 set title          " ウィンドウのタイトルバーにファイルパスを表示
 syntax on
 colorscheme molokai " カラースキーマの色
+set t_Co=256
 
 
 " カーソル移動関連の設定
