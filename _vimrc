@@ -72,36 +72,35 @@ imap [ []<LEFT>
 imap ( ()<LEFT>
 imap < <><LEFT>
 
-" NeoBundleの設定
+filetype plugin indent on
 
+" NeoBundle
 if has('vim_starting')
-   " 初回起動時のみruntimepathにneobundleのパスを指定する
-   set runtimepath+=~/.vim/bundle/neobundle.vim/
+  if &compatible
+    set nocompatible               " Be iMproved
+  endif
+
+  " Required:
+  set runtimepath+=~/.vim/bundle/neobundle.vim
 endif
 
-" NeoBundleを初期化
-call neobundle#begin(expand('~/.vim/bundle/'))
+" Required:
+call neobundle#begin(expand('~/.vim/bundle'))
 
-" インストールするプラグイン
-NeoBundle 'plasticboy/vim-markdown'
-NeoBundle 'kannokanno/previm'
-let g:previm_open_cmd='google-chrome'
-augroup PrevimSettings
-    autocmd!
-    autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
-augroup END
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
 
-nnoremap <silent><unique> <Leader>p :PrevimOpen<CR><C-l>
+" Add or remove your Bundles here:
+NeoBundle 'scrooloose/nerdtree'
 
-NeoBundle 'tyru/open-browser.vim'
 
+" Required:
 call neobundle#end()
 
-" NeoBundleCheck を走らせ起動時に未インストールプラグインをインストールする
-NeoBundleCheck
-
-" プラグインの設定など
+" Required:
 filetype plugin indent on
-"au BufRead,BufNewFile *.md set filetype=markdown
-"let g:previm_open_cmd = 'open -a Firefox'
 
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
