@@ -71,3 +71,37 @@ imap { {}<LEFT>
 imap [ []<LEFT>
 imap ( ()<LEFT>
 imap < <><LEFT>
+
+" NeoBundleの設定
+
+if has('vim_starting')
+   " 初回起動時のみruntimepathにneobundleのパスを指定する
+   set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+" NeoBundleを初期化
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+" インストールするプラグイン
+NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'kannokanno/previm'
+let g:previm_open_cmd='google-chrome'
+augroup PrevimSettings
+    autocmd!
+    autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+augroup END
+
+nnoremap <silent><unique> <Leader>p :PrevimOpen<CR><C-l>
+
+NeoBundle 'tyru/open-browser.vim'
+
+call neobundle#end()
+
+" NeoBundleCheck を走らせ起動時に未インストールプラグインをインストールする
+NeoBundleCheck
+
+" プラグインの設定など
+filetype plugin indent on
+"au BufRead,BufNewFile *.md set filetype=markdown
+"let g:previm_open_cmd = 'open -a Firefox'
+
