@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ ! -e "~/.vim" ]; then
+if [ ! -e "~/.vim" -a ! -e "/tmp/molokai" ]; then
   mkdir -p ~/.vim/colors
   cd /tmp
   git clone https://github.com/tomasr/molokai
