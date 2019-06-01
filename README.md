@@ -1,10 +1,23 @@
-# Setup Vimrc
+# yn-misaki's dotfiles
+These are my configuration files.
 
-## How to install?
+## Requirements
+- Linux or Mac OS X
+- git
 
-execute in your home directory.
+## Installation
+Run the following commands in your terminal.
 
 ```
-$ git clone https://github.com/yn-misaki/dotfiles.git
-$ sh dotfiles/setup.sh
+$ git clone https://github.com/yn-misaki/dotfiles.git ~/.dotfiles
+```
+
+On Linux use:
+```
+$ sh ~/dotfiles/setup.sh
+```
+
+On Mac OS X use:
+```
+$ sh ~/dotfiles/setup.sh mac
 ```
