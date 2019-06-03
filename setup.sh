@@ -1,5 +1,9 @@
 #!/bin/bash
 
+##################
+# 1. Set up Vim  #
+##################
+
 if [ ! -e ${HOME}/.vim/colors/ ]; then
   mkdir -p ~/.vim/colors
   git clone https://github.com/tomasr/molokai ~/.vim/colors/
@@ -24,3 +28,18 @@ if [ "$1" = "mac" ]; then
 fi
 
 sudo apt install tig
+
+##################
+# 2. Set up Git  #
+##################
+
+ln -sf ~/dotfiles/_gitconfig ~/.gitconfig
+
+echo "Set up Git user information"
+echo -n "Git User's name: "
+read USER_NAME
+git config --global user.name "${USER_NAME}"
+
+echo -n "Git User's email: "
+read USER_EMAIL
+git config --global user.email "${USER_EMAIL}"
