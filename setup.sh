@@ -33,7 +33,7 @@ sudo apt install tig
 # 2. Set up Git  #
 ##################
 
-ln -sf ~/dotfiles/_gitconfig ~/.gitconfig
+cp -p ~/dotfiles/_gitconfig ~/.gitconfig
 
 echo "Set up Git user information"
 echo -n "Git User's name: "
