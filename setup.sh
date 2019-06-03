@@ -35,7 +35,7 @@ sudo apt install tig
 
 cp -p ~/dotfiles/_gitconfig ~/.gitconfig
 
-echo "Set up Git user information"
+echo "Git user information"
 echo -n "Git User's name: "
 read USER_NAME
 git config --global user.name "${USER_NAME}"
