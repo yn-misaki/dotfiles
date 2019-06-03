@@ -32,14 +32,30 @@ sudo apt install tig
 ##################
 # 2. Set up Git  #
 ##################
+configure_user() {
+  echo "Git user information"
+  echo -n "Git User's name: "
+  read USER_NAME
+  git config --global user.name "${USER_NAME}"
 
-cp -p ~/dotfiles/_gitconfig ~/.gitconfig
+  echo -n "Git User's email: "
+  read USER_EMAIL
+  git config --global user.email "${USER_EMAIL}"
+}
 
-echo "Git user information"
-echo -n "Git User's name: "
-read USER_NAME
-git config --global user.name "${USER_NAME}"
-
-echo -n "Git User's email: "
-read USER_EMAIL
-git config --global user.email "${USER_EMAIL}"
+if [ ! -e ${HOME}/.gitconfig ]; then
+  cp -p ~/dotfiles/_gitconfig ~/.gitconfig
+  configure_user
+else
+  while true; do
+    read -p "overwrite '~/.gitconfig'? [y/n]: " ANSWER
+    case $ANSWER in
+        [Yy]* )
+          cp -p ~/dotfiles/_gitconfig ~/.gitconfig
+          configure_user
+          break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+  done
+fi
