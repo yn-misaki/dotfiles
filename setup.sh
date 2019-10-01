@@ -27,9 +27,9 @@ if [ "$1" = "mac" ]; then
   fi
 
   brew install tig
+else
+  sudo apt install tig
 fi
-
-sudo apt install tig
 
 ##################
 # 2. Set up Git  #
