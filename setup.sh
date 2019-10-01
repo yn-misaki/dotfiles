@@ -6,7 +6,9 @@
 
 if [ ! -e ${HOME}/.vim/colors/ ]; then
   mkdir -p ~/.vim/colors
-  git clone https://github.com/tomasr/molokai ~/.vim/colors/
+  git clone https://github.com/tomasr/molokai
+  mv molokai/colors/molokai.vim ~/.vim/colors/
+  rm -rf molokai
 fi
 
 if [ ! -e ${HOME}/.vim/bundle/ ]; then
