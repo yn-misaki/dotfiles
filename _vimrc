@@ -82,6 +82,9 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tyru/open-browser.vim'
 Plugin 'previm/previm'
 
+Plugin 'leafgarland/typescript-vim'
+Plugin 'peitalin/vim-jsx-typescript'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
