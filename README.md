@@ -9,7 +9,7 @@ These are my configuration files.
 Run the following commands in your terminal.
 
 ```
-$ git clone https://github.com/yn-misaki/dotfiles.git ~/.dotfiles
+$ git clone git@github.com:yn-misaki/dotfiles.git ~/.dotfiles
 ```
 
 On Linux use:
