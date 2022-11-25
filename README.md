@@ -14,10 +14,10 @@ $ git clone https://github.com/yn-misaki/dotfiles.git ~/.dotfiles
 
 On Linux use:
 ```
-$ sh ~/dotfiles/setup.sh
+$ sh ~/.dotfiles/setup.sh
 ```
 
 On Mac OS X use:
 ```
-$ sh ~/dotfiles/setup.sh mac
+$ sh ~/.dotfiles/setup.sh mac
 ```
