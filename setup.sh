@@ -16,7 +16,7 @@ if [ ! -e ${HOME}/.vim/bundle/ ]; then
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
 
-ln -sf ~/dotfiles/_vimrc ~/.vimrc
+ln -sf ~/.dotfiles/_vimrc ~/.vimrc
 
 vim +PluginInstall +qall
 
