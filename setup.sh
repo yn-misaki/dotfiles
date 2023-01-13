@@ -49,6 +49,7 @@ if [ ! -e ${HOME}/.gitconfig ]; then
   cp -p ~/dotfiles/_gitconfig ~/.gitconfig
   configure_user
   git config --global url."git@github.com:".insteadOf https://github.com
+  git config --global grep.lineNumber true
 else
   while true; do
     read -p "overwrite '~/.gitconfig'? [y/n]: " ANSWER
