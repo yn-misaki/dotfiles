@@ -1,0 +1,5 @@
+# ` => commit hash をコピー
+bind generic `      @bash -c "echo -n '%(commit)' | pbcopy"
+
+# I => rebase -i
+bind diff    <Esc>i ?git rebase -i %(commit)

@@ -31,6 +31,8 @@ else
   sudo apt install tig
 fi
 
+ln -sf ~/.dotfiles/_tigrc ~/.tigrc
+
 ##################
 # 2. Set up Git  #
 ##################
